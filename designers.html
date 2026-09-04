@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>VELVET VOGUE — Designers</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="extra.css"/>
+</head>
+<body>
+<div class="page-loader" aria-hidden="true"><div class="loader-mark">VELVET <i>VOGUE</i></div><div class="loader-line"><span></span></div></div>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <a href="index.html" class="nav-logo">VELVET<span> VOGUE</span></a>
+  <ul class="nav-links">
+    <li><a href="new-in.html">New In</a></li>
+    <li><a href="index.html">Shop</a></li>
+    <li><a href="lookbook.html">Lookbook</a></li>
+    <li><a href="designers.html" class="active">Designers</a></li>
+    <li><a href="world.html">World</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="nav-btn nav-search-trigger" title="Search" aria-label="Open product search" aria-expanded="false" onclick="openSearch()">&#9906;</button>
+    <button class="nav-btn account-icon-btn" title="Account" aria-label="Open customer account" onclick="window.location.href='account.html'"><svg class="account-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.25"></circle><path d="M5.75 19c.55-3.2 2.7-5 6.25-5s5.7 1.8 6.25 5"></path></svg></button>
+    <button class="nav-btn wishlist-icon-btn" title="Wishlist" aria-label="View wishlist" onclick="window.location.href='wishlist.html'"><svg class="wishlist-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.25 5.85c-1.7-1.72-4.48-1.72-6.18 0L12 7.94 9.93 5.85a4.34 4.34 0 0 0-6.18 0 4.44 4.44 0 0 0 0 6.24L12 20l8.25-7.91a4.44 4.44 0 0 0 0-6.24Z"></path></svg><span class="wish-num" style="display:none">0</span></button>
+    <button class="nav-btn bag-icon-btn" title="Bag" aria-label="View shopping bag" onclick="window.location.href='bag.html'">
+      <svg class="bag-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8.5h13l1 12h-15l1-12Z"></path><path d="M9 9V6.5a3 3 0 0 1 6 0V9"></path></svg>
+      <span class="cart-num" id="cartNum" style="display:none">0</span>
+    </button>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <video class="page-hero-video" autoplay muted loop playsinline preload="metadata" poster="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1600&q=80">
+    <source src="./video.mp4" type="video/mp4"/>
+  </video>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <p class="page-hero-kicker">The Makers</p>
+    <h1 class="page-hero-title">Our <em>Designers</em></h1>
+    <p class="page-hero-desc">Every VELVET VOGUE piece begins in the hands of an independent designer. Meet the ateliers behind the collection.</p>
+  </div>
+</section>
+
+<div class="section-head" style="margin-top:56px;">
+  <h2>Partner <em style="font-style:italic;color:var(--gold)">Ateliers</em></h2>
+  <p>Six houses, one shared craft</p>
+</div>
+
+<div class="designer-grid">
+
+  <div class="designer-card">
+    <div class="designer-img"><img src="https://tse1.mm.bing.net/th/id/OIP.5TIJhP2Fqcp4Ad6uFNy_3gHaNK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Maison Aurel"/></div>
+    <div class="designer-info">
+      <div class="designer-name">Maison Aurèle</div>
+      <div class="designer-loc">Florence, Italy</div>
+      <p class="designer-bio">Specialists in pure silk draping, Maison Aurèle has hand-finished VELVET VOGUE's eveningwear since 2015, using techniques passed down through three generations of seamstresses.</p>
+    </div>
+  </div>
+
+  <div class="designer-card">
+    <div class="designer-img"><img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=600&q=80" alt="Atelier Bruyère"/></div>
+    <div class="designer-info">
+      <div class="designer-name">Atelier Bruyère</div>
+      <div class="designer-loc">Lyon, France</div>
+      <p class="designer-bio">A small tailoring house known for structured outerwear and virgin wool coats, cut and stitched entirely by hand in a converted 19th-century mill.</p>
+    </div>
+  </div>
+
+  <div class="designer-card">
+    <div class="designer-img"><img src="https://images.pexels.com/photos/33875523/pexels-photo-33875523.jpeg" alt="Studio Lin"/></div>
+    <div class="designer-info">
+      <div class="designer-name">Studio Lin</div>
+      <div class="designer-loc">Antwerp, Belgium</div>
+      <p class="designer-bio">Champions of Belgian linen, Studio Lin designs relaxed, breathable silhouettes for warm-weather dressing, sourcing every yard within 50km of their workshop.</p>
+    </div>
+  </div>
+
+  <div class="designer-card">
+    <div class="designer-img"><img src="https://images.pexels.com/photos/18178445/pexels-photo-18178445.jpeg" alt="Casa Merino"/></div>
+    <div class="designer-info">
+      <div class="designer-name">Casa Merino</div>
+      <div class="designer-loc">Porto, Portugal</div>
+      <p class="designer-bio">A family-run knitwear house producing VELVET VOGUE's cashmere and merino pieces on vintage circular knitting machines restored by the founder's father.</p>
+    </div>
+  </div>
+
+  <div class="designer-card">
+    <div class="designer-img"><img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&q=80" alt="Cuoio &amp; Co"/></div>
+    <div class="designer-info">
+      <div class="designer-name">Cuoio &amp; Co</div>
+      <div class="designer-loc">Florence, Italy</div>
+      <p class="designer-bio">Leather goods made using full-grain hides and vegetable tanning, a slower process that Cuoio &amp; Co believes produces bags that age more gracefully.</p>
+    </div>
+  </div>
+
+  <div class="designer-card">
+    <div class="designer-img"><img src="https://images.unsplash.com/photo-1551163943-3f6a855d1153?w=600&q=80" alt="Maison Solene"/></div>
+    <div class="designer-info">
+      <div class="designer-name">Maison Solène</div>
+      <div class="designer-loc">Paris, France</div>
+      <p class="designer-bio">A satin and jacquard specialist bringing couture-level finishing to VELVET VOGUE's skirts and eveningwear, founded by a former haute couture patternmaker.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="newsletter">
+  <div class="newsletter-inner">
+    <h2>A letter from the <em>Atelier</em></h2>
+    <p>Join our inner circle for early access to new collections, invitations to private events, and stories from our makers.</p>
+    <div class="nl-form">
+      <input class="nl-input" type="email" placeholder="your@email.com"/>
+      <button class="nl-btn" onclick="showToast('Welcome to the atelier ✦')">Subscribe</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">VELVET <span>VOGUE</span></div>
+      <p class="footer-tagline">Slow fashion, European craft. Made-to-order in our partner ateliers across Italy and France since 2014.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="new-in.html">New Arrivals</a></li>
+        <li><a href="index.html">Dresses</a></li>
+        <li><a href="index.html">Outerwear</a></li>
+        <li><a href="index.html">Accessories</a></li>
+        <li><a href="index.html">Sale</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Service</h4>
+      <ul>
+        <li><a href="#">Size Guide</a></li>
+        <li><a href="#">Shipping</a></li>
+        <li><a href="#">Returns</a></li>
+        <li><a href="#">Care Guide</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>House</h4>
+      <ul>
+        <li><a href="world.html">Our Story</a></li>
+        <li><a href="world.html">Sustainability</a></li>
+        <li><a href="designers.html">Designers</a></li>
+        <li><a href="#">Press</a></li>
+        <li><a href="world.html">Stores</a></li>
+        <li><a href="admin.html">Admin</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 Powered by _amesh_nethsara_ All rights reserved.</span>
+    <div class="footer-socials">
+      <a href="#" class="fsocial">𝕏</a>
+      <a href="#" class="fsocial">in</a>
+      <a href="#" class="fsocial">ig</a>
+      <a href="#" class="fsocial">pt</a>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="products-data.js"></script>
+<script src="script.js"></script>
+<script src="loader.js"></script>
+</body>
+</html>

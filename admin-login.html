@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>VELVET VOGUE — Admin Login</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="admin.css"/>
+<style>
+  body.login-body {
+    cursor: auto; min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--ink);
+    background-image: linear-gradient(rgba(17,16,16,.82), rgba(17,16,16,.88)),
+      url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80');
+    background-size: cover; background-position: center;
+  }
+  .login-card {
+    width: 380px; max-width: 90vw; background: var(--white);
+    padding: 44px 38px; box-shadow: var(--shadow-md);
+  }
+  .login-logo { text-align: center; margin-bottom: 6px; }
+  .login-logo a { font-family: 'Playfair Display', serif; font-size: 24px; letter-spacing: .22em; color: var(--ink); text-decoration: none; }
+  .login-logo span { color: var(--gold); }
+  .login-tag {
+    text-align: center; font-size: 10px; letter-spacing: .25em; text-transform: uppercase;
+    opacity: .45; margin-bottom: 32px;
+  }
+  .login-field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 18px; }
+  .login-field label { font-size: 10px; letter-spacing: .14em; text-transform: uppercase; opacity: .55; }
+  .login-field input {
+    padding: 12px 14px; border: 1px solid var(--sand); background: var(--off);
+    font-family: 'DM Sans'; font-size: 14px; outline: none; transition: border-color .2s;
+  }
+  .login-field input:focus { border-color: var(--gold); }
+  .login-error {
+    font-size: 12px; color: var(--rust); background: rgba(160,67,42,.08);
+    padding: 10px 12px; margin-bottom: 16px; display: none;
+  }
+  .login-error.show { display: block; }
+  .login-btn {
+    width: 100%; padding: 13px; background: var(--ink); color: var(--white);
+    border: none; cursor: pointer; font-family: 'DM Sans'; font-size: 11px;
+    letter-spacing: .2em; text-transform: uppercase; transition: background .2s;
+  }
+  .login-btn:hover { background: var(--gold); }
+  .login-back { text-align: center; margin-top: 22px; }
+  .login-back a { font-size: 11px; color: var(--ink); opacity: .5; text-decoration: none; letter-spacing: .08em; }
+  .login-back a:hover { opacity: 1; color: var(--gold); }
+  .login-hint { font-size: 11px; opacity: .35; text-align: center; margin-top: 14px; line-height: 1.6; }
+</style>
+</head>
+<body class="login-body">
+<div class="page-loader" aria-hidden="true"><div class="loader-mark">VELVET <i>VOGUE</i></div><div class="loader-line"><span></span></div></div>
+
+<div class="login-card">
+  <div class="login-logo"><a href="index.html">VELVET<span> VOGUE</span></a></div>
+  <p class="login-tag">Admin Access</p>
+
+  <div class="login-error" id="loginError">Incorrect username or password.</div>
+
+  <form id="loginForm" onsubmit="handleLoginSubmit(event)">
+    <div class="login-field">
+      <label>Username</label>
+      <input type="text" id="loginUser" autocomplete="username" required autofocus/>
+    </div>
+    <div class="login-field">
+      <label>Password</label>
+      <input type="password" id="loginPass" autocomplete="current-password" required/>
+    </div>
+    <button type="submit" class="login-btn">Log In</button>
+  </form>
+
+  <div class="login-back"><a href="index.html">← Back to Store</a></div>
+</div>
+
+<script src="auth.js"></script>
+<script src="loader.js"></script>
+<script>
+  // Already logged in? skip straight to admin.
+  if (veloIsLoggedIn()) window.location.href = 'admin.html';
+
+  function handleLoginSubmit(e) {
+    e.preventDefault();
+    const user = document.getElementById('loginUser').value;
+    const pass = document.getElementById('loginPass').value;
+    const errorEl = document.getElementById('loginError');
+
+    if (veloLogin(user, pass)) {
+      window.location.href = 'admin.html';
+    } else {
+      errorEl.classList.add('show');
+      document.getElementById('loginPass').value = '';
+      document.getElementById('loginPass').focus();
+    }
+  }
+</script>
+</body>
+</html>

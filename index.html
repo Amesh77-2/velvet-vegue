@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VELVET VOGUE — Spring Collection</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<div class="page-loader" aria-hidden="true">
+  <div class="loader-mark">VELVET <i>VOGUE</i></div>
+  <div class="loader-line"><span></span></div>
+</div>
+<div class="luxury-grain" aria-hidden="true"></div>
+
+<!-- CUSTOM CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ══ NAV ══ -->
+<nav>
+  <a href="#" class="nav-logo">VELVET<span> VOGUE</span></a>
+  <ul class="nav-links">
+    <li><a href="new-in.html">New In</a></li>
+    <li><a href="index.html" class="active">Shop</a></li>
+    <li><a href="lookbook.html">Lookbook</a></li>
+    <li><a href="designers.html">Designers</a></li>
+    <li><a href="world.html">World</a></li>
+  </ul>
+  <div class="nav-right">
+    <form class="top-search" id="topSearchForm" role="search"><input id="topSearchInput" type="search" placeholder="Search collection" autocomplete="off" aria-label="Search the collection"/><button type="submit">Search</button></form>
+    <button class="nav-btn account-icon-btn" title="Account" aria-label="Open customer account" onclick="window.location.href='account.html'"><svg class="account-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.25"></circle><path d="M5.75 19c.55-3.2 2.7-5 6.25-5s5.7 1.8 6.25 5"></path></svg></button>
+    <button class="nav-btn wishlist-icon-btn" title="Wishlist" aria-label="View wishlist" onclick="window.location.href='wishlist.html'"><svg class="wishlist-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.25 5.85c-1.7-1.72-4.48-1.72-6.18 0L12 7.94 9.93 5.85a4.34 4.34 0 0 0-6.18 0 4.44 4.44 0 0 0 0 6.24L12 20l8.25-7.91a4.44 4.44 0 0 0 0-6.24Z"></path></svg><span class="wish-num" style="display:none">0</span></button>
+    <button class="nav-btn bag-icon-btn" title="Bag" aria-label="View shopping bag" onclick="window.location.href='bag.html'">
+      <svg class="bag-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8.5h13l1 12h-15l1-12Z"></path><path d="M9 9V6.5a3 3 0 0 1 6 0V9"></path></svg>
+      <span class="cart-num" id="cartNum" style="display:none">0</span>
+    </button>
+  </div>
+</nav>
+
+<!-- ══ VIDEO HERO ══ -->
+<section class="hero">
+  <video class="hero-video" autoplay muted loop playsinline preload="auto" id="heroVideo">
+    <source src="./video.mp4" type="video/mp4"/>
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-aura" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <p class="hero-kicker">Spring · Summer 2026</p>
+    <h1 class="hero-title"><span>Dressed</span><br><span>in <em>Light</em></span></h1>
+    <p class="hero-desc">A collection that moves like water — effortless silhouettes crafted from living fabrics. Made slowly, made to last.</p>
+    <div class="hero-ctas">
+      <button class="btn-primary" onclick="document.querySelector('.shop-shell').scrollIntoView({behavior:'smooth'})">Shop Now</button>
+      <button class="btn-ghost" onclick="window.location.href='lookbook.html'">View Lookbook</button>
+    </div>
+  </div>
+
+  <button class="mute-btn" id="muteBtn" onclick="toggleMute()" title="Toggle sound">🔇</button>
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<section class="maison-statement reveal" aria-label="Our philosophy">
+  <p class="statement-eyebrow">The house of quiet expression</p>
+  <p class="statement-copy">Designed for the moments that <em>linger</em> — sculptural forms, sensuous textures and a devotion to the rare.</p>
+  <span class="statement-signature">Velvet Vogue · Paris / Milano</span>
+</section>
+
+<!-- ══ TICKER TAPE ══ -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span>Free Shipping Over $250</span><span class="dot">✦</span>
+    <span>New Arrivals Every Thursday</span><span class="dot">✦</span>
+    <span>Crafted in Italy &amp; France</span><span class="dot">✦</span>
+    <span>Carbon-Neutral Since 2023</span><span class="dot">✦</span>
+    <span>Members Get Early Access</span><span class="dot">✦</span>
+    <span>Free Returns Within 30 Days</span><span class="dot">✦</span>
+    <!-- duplicate for seamless loop -->
+    <span>Free Shipping Over $250</span><span class="dot">✦</span>
+    <span>New Arrivals Every Thursday</span><span class="dot">✦</span>
+    <span>Crafted in Italy &amp; France</span><span class="dot">✦</span>
+    <span>Carbon-Neutral Since 2023</span><span class="dot">✦</span>
+    <span>Members Get Early Access</span><span class="dot">✦</span>
+    <span>Free Returns Within 30 Days</span><span class="dot">✦</span>
+  </div>
+</div>
+
+<!-- ══ SHOP SHELL ══ -->
+<div class="shop-shell">
+
+  <div class="shop-video-layer" aria-hidden="true">
+    <div class="shop-video-veil"></div>
+  </div>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <p class="sidebar-title">Categories</p>
+    <label class="filter-check"><input type="checkbox" checked/><label>All (132)</label></label>
+    <label class="filter-check"><input type="checkbox"/><label>Dresses (28)</label></label>
+    <label class="filter-check"><input type="checkbox"/><label>Outerwear (19)</label></label>
+    <label class="filter-check"><input type="checkbox"/><label>Tops (34)</label></label>
+    <label class="filter-check"><input type="checkbox"/><label>Trousers (21)</label></label>
+    <label class="filter-check"><input type="checkbox"/><label>Skirts (14)</label></label>
+    <label class="filter-check"><input type="checkbox"/><label>Accessories (16)</label></label>
+
+    <p class="sidebar-title">Color</p>
+    <div class="color-dots">
+      <div class="color-dot sel" style="background:#1C1C1C" title="Noir"></div>
+      <div class="color-dot" style="background:#F7F3EE" title="Ivory"></div>
+      <div class="color-dot" style="background:#C4A882" title="Camel"></div>
+      <div class="color-dot" style="background:#7C8C72" title="Sage"></div>
+      <div class="color-dot" style="background:#9AAABF" title="Sky"></div>
+      <div class="color-dot" style="background:#C9A89A" title="Blush"></div>
+      <div class="color-dot" style="background:#A0432A" title="Rust"></div>
+      <div class="color-dot" style="background:#4E3A2E" title="Mocha"></div>
+    </div>
+
+    <p class="sidebar-title">Price Range</p>
+    <div class="price-range">
+      <input type="range" class="range-slider" min="0" max="2000" value="1200"/>
+      <div class="range-labels"><span>$0</span><span>$1,200</span></div>
+    </div>
+
+    <p class="sidebar-title">Size</p>
+    <label class="filter-check"><input type="checkbox"/><label>XXS / 32</label></label>
+    <label class="filter-check"><input type="checkbox"/><label>XS / 34</label></label>
+    <label class="filter-check"><input type="checkbox" checked/><label>S / 36</label></label>
+    <label class="filter-check"><input type="checkbox" checked/><label>M / 38</label></label>
+    <label class="filter-check"><input type="checkbox"/><label>L / 40</label></label>
+    <label class="filter-check"><input type="checkbox"/><label>XL / 42</label></label>
+
+    <p class="sidebar-title">Material</p>
+    <label class="filter-check"><input type="checkbox"/><label>Silk</label></label>
+    <label class="filter-check"><input type="checkbox"/><label>Cashmere</label></label>
+    <label class="filter-check"><input type="checkbox" checked/><label>Linen</label></label>
+    <label class="filter-check"><input type="checkbox"/><label>Wool Blend</label></label>
+    <label class="filter-check"><input type="checkbox"/><label>Cotton</label></label>
+
+    <br/>
+    <button class="sidebar-apply" onclick="showToast('Filters applied — 48 results')">Apply Filters</button>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="shop-main">
+
+    <div class="shop-header">
+      <div class="shop-header-left">
+        <h2>Collection</h2>
+        <p id="collectionCount">132 pieces · Spring–Summer 2026</p>
+      </div>
+      <div style="display:flex;gap:20px;align-items:center;">
+        <div class="view-toggles">
+          <button class="view-btn active" onclick="setView(2,this)" title="2 columns">⊞</button>
+          <button class="view-btn" onclick="setView(3,this)" title="3 columns">⊟</button>
+          <button class="view-btn" onclick="setView(1,this)" title="1 column">☰</button>
+        </div>
+        <div class="sort-bar">
+          <span>Sort by</span>
+          <select>
+            <option>Featured</option>
+            <option>Newest</option>
+            <option>Price ↑</option>
+            <option>Price ↓</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ PRODUCT GRID (rendered by script.js from products-data.js) ══ -->
+    <div class="product-grid view-2" id="productGrid">
+      <!-- Populated dynamically by renderProductGrid() in script.js -->
+    </div><!-- /product-grid -->
+
+    <!-- ══ VIDEO LOOKBOOK STRIP ══ -->
+    <div class="lookbook-strip">
+      <div class="lb-video-wrap">
+        <video class="lb-video" autoplay muted loop playsinline
+          poster="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&q=80">
+          <source src="https://www.pexels.com/download/video/7088602/" type="video/mp4"/>
+        </video>
+        <div class="lb-overlay">
+          <p class="lb-tag">Campaign Film</p>
+          <h3 class="lb-name">The Silk<br>Edit</h3>
+          <p class="lb-price">From $280</p>
+        </div>
+        <div class="lb-play-btn">▶</div>
+      </div>
+      <div class="lb-right">
+        <div class="lb-small" onclick="addToCart('Linen Shirt Dress')">
+          <img src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=600&q=80" alt="Linen Shirt Dress" loading="lazy"/>
+          <div class="lb-small-overlay">
+            <div class="lb-small-name">Linen Shirt Dress</div>
+            <div class="lb-small-price">$495</div>
+          </div>
+        </div>
+        <div class="lb-small" onclick="addToCart('Knit Co-ord Set')">
+          <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&q=80" alt="Knit Co-ord" loading="lazy"/>
+          <div class="lb-small-overlay">
+            <div class="lb-small-name">Knit Co-ord Set</div>
+            <div class="lb-small-price">$620</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ INSTAGRAM GRAM GRID ══ -->
+    <div class="gram-section">
+      <div class="gram-head">
+        <h2>Styled by <em style="font-style:italic;color:var(--gold)">You</em></h2>
+        <p>Tag @velo.maison to be featured · #VELOCollection</p>
+      </div>
+      <div class="gram-grid">
+        <div class="gram-item">
+          <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&q=75" alt="Style 1" loading="lazy"/>
+          <div class="gram-item-overlay"><span>Shop Look</span></div>
+        </div>
+        <div class="gram-item">
+          <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=400&q=75" alt="Style 2" loading="lazy"/>
+          <div class="gram-item-overlay"><span>Shop Look</span></div>
+        </div>
+        <div class="gram-item">
+          <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=400&q=75" alt="Style 3" loading="lazy"/>
+          <div class="gram-item-overlay"><span>Shop Look</span></div>
+        </div>
+        <div class="gram-item">
+          <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=400&q=75" alt="Style 4" loading="lazy"/>
+          <div class="gram-item-overlay"><span>Shop Look</span></div>
+        </div>
+        <div class="gram-item">
+          <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=400&q=75" alt="Style 5" loading="lazy"/>
+          <div class="gram-item-overlay"><span>Shop Look</span></div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div><!-- /shop-shell -->
+
+<!-- ══ NEWSLETTER ══ -->
+<div class="newsletter">
+  <div class="newsletter-inner">
+    <h2>A letter from the <em>Atelier</em></h2>
+    <p>Join our inner circle for early access to new collections, invitations to private events, and stories from our makers.</p>
+    <form class="nl-form" id="newsletterForm">
+      <input class="nl-input" id="newsletterEmail" type="email" placeholder="your@email.com" autocomplete="email" aria-label="Email address" required/>
+      <button class="nl-btn" type="submit">Subscribe</button>
+    </form>
+  </div>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">VELVET <span>VOGUE</span></div>
+      <p class="footer-tagline">Slow fashion, European craft. Made-to-order in our partner ateliers across Italy and France since 2014.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="#">New Arrivals</a></li>
+        <li><a href="#">Dresses</a></li>
+        <li><a href="#">Outerwear</a></li>
+        <li><a href="#">Accessories</a></li>
+        <li><a href="#">Sale</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Service</h4>
+      <ul>
+        <li><a href="#">Size Guide</a></li>
+        <li><a href="#">Shipping</a></li>
+        <li><a href="#">Returns</a></li>
+        <li><a href="#">Care Guide</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>House</h4>
+      <ul>
+        <li><a href="#">Our Story</a></li>
+        <li><a href="#">Sustainability</a></li>
+        <li><a href="#">Designers</a></li>
+        <li><a href="#">Press</a></li>
+        <li><a href="#">Stores</a></li>
+        <li><a href="admin.html">Admin</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 Powered by _amesh_nethsara_ All rights reserved.</span>
+    <div class="footer-socials">
+      <a href="#" class="fsocial">𝕏</a>
+      <a href="#" class="fsocial">in</a>
+      <a href="#" class="fsocial">ig</a>
+      <a href="#" class="fsocial">pt</a>
+    </div>
+  </div>
+</footer>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- QUICK VIEW MODAL -->
+<div class="modal-bg" id="modalBg" onclick="closeModal()"></div>
+<div class="modal" id="modal">
+  <div class="modal-img">
+    <img id="modalImg" src="" alt="Product"/>
+  </div>
+  <div class="modal-body">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <p class="modal-kicker" id="modalCat">Category</p>
+    <h2 class="modal-title" id="modalTitle">Product Name</h2>
+    <p class="modal-price" id="modalPrice">$000</p>
+    <p class="modal-desc">Crafted with the finest materials, this piece embodies effortless elegance. Ethically made in our partner atelier in Florence, Italy.</p>
+    <div class="modal-sizes">
+      <div class="modal-size" onclick="selSize(this)">XS</div>
+      <div class="modal-size" onclick="selSize(this)">S</div>
+      <div class="modal-size sel" onclick="selSize(this)">M</div>
+      <div class="modal-size" onclick="selSize(this)">L</div>
+      <div class="modal-size" onclick="selSize(this)">XL</div>
+    </div>
+    <button class="modal-add" onclick="addFromModal()">Add to Bag</button>
+  </div>
+</div>
+
+<!-- JS loaded last for best performance -->
+<script src="products-data.js"></script>
+<script src="script.js"></script>
+<script src="loader.js"></script>
+
+</body>
+</html>

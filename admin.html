@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>VELVET VOGUE — Admin</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="admin.css"/>
+</head>
+<body class="admin-body">
+<div class="page-loader" aria-hidden="true"><div class="loader-mark">VELVET <i>VOGUE</i></div><div class="loader-line"><span></span></div></div>
+<script src="auth.js"></script>
+<script>veloRequireLogin();</script>
+
+<nav class="admin-nav">
+  <div style="display:flex;align-items:center;">
+    <a href="index.html" class="nav-logo">VELVET<span> VOGUE</span></a>
+    <span class="admin-nav-tag">Admin</span>
+  </div>
+  <div class="admin-nav-right">
+    <a href="index.html">← Back to Store</a>
+    <a href="#" onclick="veloLogout();return false;">Log Out</a>
+  </div>
+</nav>
+
+<div class="admin-shell">
+  <div class="admin-header">
+    <div>
+      <h1>Product Management</h1>
+      <p>Add, edit, and remove products. Changes appear on the Shop page instantly.</p>
+    </div>
+    <div class="admin-toolbar">
+      <button class="admin-btn admin-btn-ghost" onclick="handleResetProducts()">Reset to Defaults</button>
+      <button class="admin-btn admin-btn-primary" onclick="openProductForm()">+ Add Product</button>
+    </div>
+  </div>
+
+  <div class="admin-stats" id="adminStats"></div>
+
+  <div class="admin-table-wrap">
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Product</th>
+          <th>Category</th>
+          <th>Price</th>
+          <th>Badge</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="adminTableBody"></tbody>
+    </table>
+    <div class="admin-empty" id="adminEmpty" style="display:none">No products yet — add your first one.</div>
+  </div>
+</div>
+
+<!-- PRODUCT FORM MODAL -->
+<div class="admin-modal-bg" id="adminModalBg" onclick="closeProductForm()"></div>
+<div class="admin-modal" id="adminModal">
+  <button class="admin-modal-close" onclick="closeProductForm()">✕</button>
+  <h2 id="adminFormTitle">Add Product</h2>
+  <form class="admin-form-grid" id="adminForm" onsubmit="handleFormSubmit(event)">
+    <input type="hidden" id="f-id"/>
+
+    <div class="admin-field full">
+      <label>Product Name</label>
+      <input type="text" id="f-name" required placeholder="e.g. Silk Wrap Dress"/>
+    </div>
+
+    <div class="admin-field">
+      <label>Category</label>
+      <select id="f-category">
+        <option>Dresses</option>
+        <option>Outerwear</option>
+        <option>Tops</option>
+        <option>Trousers</option>
+        <option>Skirts</option>
+        <option>Accessories</option>
+      </select>
+    </div>
+
+    <div class="admin-field">
+      <label>Material</label>
+      <input type="text" id="f-material" placeholder="e.g. Mulberry Silk"/>
+    </div>
+
+    <div class="admin-field">
+      <label>Price ($)</label>
+      <input type="number" id="f-price" required min="0" step="1"/>
+    </div>
+
+    <div class="admin-field">
+      <label>Original Price (optional)</label>
+      <input type="number" id="f-oldprice" min="0" step="1" placeholder="Leave blank if not on sale"/>
+    </div>
+
+    <div class="admin-field">
+      <label>Badge</label>
+      <select id="f-badgetype" onchange="onBadgeTypeChange()">
+        <option value="none">None</option>
+        <option value="new">New</option>
+        <option value="sale">Sale</option>
+        <option value="limited">Limited</option>
+      </select>
+    </div>
+
+    <div class="admin-field">
+      <label>Badge Label</label>
+      <input type="text" id="f-badgelabel" placeholder="e.g. New, −25%, Exclusive"/>
+    </div>
+
+    <div class="admin-field full">
+      <label>Main Image URL</label>
+      <input type="text" id="f-img" placeholder="https://..."/>
+    </div>
+
+    <div class="admin-field full">
+      <label>Hover / Alt Image URL</label>
+      <input type="text" id="f-imgalt" placeholder="https://..."/>
+    </div>
+
+    <div class="admin-field">
+      <label>Sizes (comma separated)</label>
+      <input type="text" id="f-sizes" placeholder="XS, S, M, L"/>
+    </div>
+
+    <div class="admin-field">
+      <label>Colors (hex, comma separated)</label>
+      <input type="text" id="f-colors" placeholder="#1C1C1C, #C4A882"/>
+    </div>
+
+    <div class="admin-field full" style="flex-direction:row;align-items:center;gap:8px;">
+      <input type="checkbox" id="f-isnew" style="width:auto;"/>
+      <label style="text-transform:none;font-size:12px;opacity:.8;">Mark as part of "New In" collection</label>
+    </div>
+
+    <div class="admin-form-actions">
+      <button type="button" class="admin-btn admin-btn-ghost" onclick="closeProductForm()">Cancel</button>
+      <button type="submit" class="admin-btn admin-btn-primary" id="adminFormSubmitBtn">Save Product</button>
+    </div>
+  </form>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="products-data.js"></script>
+<script src="admin.js"></script>
+<script src="loader.js"></script>
+</body>
+</html>

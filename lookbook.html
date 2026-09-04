@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>VELVET VOGUE — Lookbook</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="extra.css"/>
+</head>
+<body>
+<div class="page-loader" aria-hidden="true"><div class="loader-mark">VELVET <i>VOGUE</i></div><div class="loader-line"><span></span></div></div>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <a href="index.html" class="nav-logo">VELVET<span> VOGUE</span></a>
+  <ul class="nav-links">
+    <li><a href="new-in.html">New In</a></li>
+    <li><a href="index.html">Shop</a></li>
+    <li><a href="lookbook.html" class="active">Lookbook</a></li>
+    <li><a href="designers.html">Designers</a></li>
+    <li><a href="world.html">World</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="nav-btn nav-search-trigger" title="Search" aria-label="Open product search" aria-expanded="false" onclick="openSearch()">&#9906;</button>
+    <button class="nav-btn account-icon-btn" title="Account" aria-label="Open customer account" onclick="window.location.href='account.html'"><svg class="account-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.25"></circle><path d="M5.75 19c.55-3.2 2.7-5 6.25-5s5.7 1.8 6.25 5"></path></svg></button>
+    <button class="nav-btn wishlist-icon-btn" title="Wishlist" aria-label="View wishlist" onclick="window.location.href='wishlist.html'"><svg class="wishlist-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.25 5.85c-1.7-1.72-4.48-1.72-6.18 0L12 7.94 9.93 5.85a4.34 4.34 0 0 0-6.18 0 4.44 4.44 0 0 0 0 6.24L12 20l8.25-7.91a4.44 4.44 0 0 0 0-6.24Z"></path></svg><span class="wish-num" style="display:none">0</span></button>
+    <button class="nav-btn bag-icon-btn" title="Bag" aria-label="View shopping bag" onclick="window.location.href='bag.html'">
+      <svg class="bag-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8.5h13l1 12h-15l1-12Z"></path><path d="M9 9V6.5a3 3 0 0 1 6 0V9"></path></svg>
+      <span class="cart-num" id="cartNum" style="display:none">0</span>
+    </button>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <video class="page-hero-video" autoplay muted loop playsinline preload="metadata" poster="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1600&q=80">
+    <source src="./video.mp4" type="video/mp4"/>
+  </video>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <p class="page-hero-kicker">Spring · Summer 2026</p>
+    <h1 class="page-hero-title">The <em>Lookbook</em></h1>
+    <p class="page-hero-desc">A visual journey through the collection — shot on location across the French and Italian countryside.</p>
+  </div>
+</section>
+
+<div class="section-head" style="margin-top:56px;">
+  <h2>Editorial <em style="font-style:italic;color:var(--gold)">Stories</em></h2>
+  <p>Click an image to shop the look</p>
+</div>
+
+<div class="lb-editorial-grid">
+  <div class="lb-editorial-item tall" onclick="openModal('Silk Wrap Dress','Dresses · Pure Mulberry Silk','$890','./assets/products/silk-wrap-dress.png')">
+    <img src="./assets/products/silk-wrap-dress.png" alt="The Silk Edit"/>
+    <div class="lb-editorial-overlay">
+      <div class="lb-editorial-title">The Silk Edit</div>
+      <div class="lb-editorial-sub">Shop the Silk Wrap Dress · $890</div>
+    </div>
+  </div>
+  <div class="lb-editorial-item" onclick="openModal('Tailored Wool Coat','Outerwear · Virgin Wool','$1,480','./assets/products/tailored-wool-coat.png')">
+    <img src="./assets/products/tailored-wool-coat.png" alt="Tailored Line"/>
+    <div class="lb-editorial-overlay">
+      <div class="lb-editorial-title">The Tailored Line</div>
+      <div class="lb-editorial-sub">Shop the Wool Coat · $1,480</div>
+    </div>
+  </div>
+  <div class="lb-editorial-item" onclick="openModal('Oversized Linen Blazer','Outerwear · Washed Linen','$760','./assets/products/oversized-linen-blazer.png')">
+    <img src="./assets/products/oversized-linen-blazer.png" alt="Linen Days"/>
+    <div class="lb-editorial-overlay">
+      <div class="lb-editorial-title">Linen Days</div>
+      <div class="lb-editorial-sub">Shop the Linen Blazer · $760</div>
+    </div>
+  </div>
+  <div class="lb-editorial-item tall" onclick="openModal('Draped Jersey Maxi','Dresses · Viscose Jersey','$650','./assets/products/draped-jersey-maxi.png')">
+    <img src="./assets/products/draped-jersey-maxi.png" alt="Golden Hour"/>
+    <div class="lb-editorial-overlay">
+      <div class="lb-editorial-title">Golden Hour</div>
+      <div class="lb-editorial-sub">Shop the Jersey Maxi · $650</div>
+    </div>
+  </div>
+</div>
+
+<div class="lookbook-strip" style="margin:0;">
+  <div class="lb-video-wrap">
+    <video class="lb-video" autoplay muted loop playsinline
+      poster="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&q=80">
+      <source src="https://www.pexels.com/download/video/7088602/" type="video/mp4"/>
+    </video>
+    <div class="lb-overlay">
+      <p class="lb-tag">Campaign Film</p>
+      <h3 class="lb-name">Behind the<br>Scenes</h3>
+      <p class="lb-price">Watch the full film</p>
+    </div>
+    <div class="lb-play-btn">▶</div>
+  </div>
+  <div class="lb-right">
+    <div class="lb-small" onclick="openModal('Satin Midi Skirt','Skirts · Duchess Satin','$580','./assets/products/satin-midi-skirt.png')">
+      <img src="./assets/products/satin-midi-skirt.png" alt="Satin Midi Skirt"/>
+      <div class="lb-small-overlay">
+        <div class="lb-small-name">Satin Midi Skirt</div>
+        <div class="lb-small-price">$580</div>
+      </div>
+    </div>
+    <div class="lb-small" onclick="openModal('Leather Tote Bag','Accessories · Full-Grain Leather','$1,150','./assets/products/leather-tote-bag.png')">
+      <img src="./assets/products/leather-tote-bag.png" alt="Leather Tote"/>
+      <div class="lb-small-overlay">
+        <div class="lb-small-name">Leather Tote Bag</div>
+        <div class="lb-small-price">$1,150</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="newsletter">
+  <div class="newsletter-inner">
+    <h2>A letter from the <em>Atelier</em></h2>
+    <p>Join our inner circle for early access to new collections, invitations to private events, and stories from our makers.</p>
+    <div class="nl-form">
+      <input class="nl-input" type="email" placeholder="your@email.com"/>
+      <button class="nl-btn" onclick="showToast('Welcome to the atelier ✦')">Subscribe</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">VELVET <span>VOGUE</span></div>
+      <p class="footer-tagline">Slow fashion, European craft. Made-to-order in our partner ateliers across Italy and France since 2014.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="new-in.html">New Arrivals</a></li>
+        <li><a href="index.html">Dresses</a></li>
+        <li><a href="index.html">Outerwear</a></li>
+        <li><a href="index.html">Accessories</a></li>
+        <li><a href="index.html">Sale</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Service</h4>
+      <ul>
+        <li><a href="#">Size Guide</a></li>
+        <li><a href="#">Shipping</a></li>
+        <li><a href="#">Returns</a></li>
+        <li><a href="#">Care Guide</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>House</h4>
+      <ul>
+        <li><a href="world.html">Our Story</a></li>
+        <li><a href="world.html">Sustainability</a></li>
+        <li><a href="designers.html">Designers</a></li>
+        <li><a href="#">Press</a></li>
+        <li><a href="world.html">Stores</a></li>
+        <li><a href="admin.html">Admin</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 Powered by _amesh_nethsara_ All rights reserved.</span>
+    <div class="footer-socials">
+      <a href="#" class="fsocial">𝕏</a>
+      <a href="#" class="fsocial">in</a>
+      <a href="#" class="fsocial">ig</a>
+      <a href="#" class="fsocial">pt</a>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<div class="modal-bg" id="modalBg" onclick="closeModal()"></div>
+<div class="modal" id="modal">
+  <div class="modal-img"><img id="modalImg" src="" alt="Product"/></div>
+  <div class="modal-body">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <p class="modal-kicker" id="modalCat">Category</p>
+    <h2 class="modal-title" id="modalTitle">Product Name</h2>
+    <p class="modal-price" id="modalPrice">$000</p>
+    <p class="modal-desc">Crafted with the finest materials, this piece embodies effortless elegance. Ethically made in our partner atelier in Florence, Italy.</p>
+    <div class="modal-sizes">
+      <div class="modal-size" onclick="selSize(this)">XS</div>
+      <div class="modal-size" onclick="selSize(this)">S</div>
+      <div class="modal-size sel" onclick="selSize(this)">M</div>
+      <div class="modal-size" onclick="selSize(this)">L</div>
+      <div class="modal-size" onclick="selSize(this)">XL</div>
+    </div>
+    <button class="modal-add" onclick="addFromModal()">Add to Bag</button>
+  </div>
+</div>
+
+<script src="products-data.js"></script>
+<script src="script.js"></script>
+<script src="loader.js"></script>
+</body>
+</html>

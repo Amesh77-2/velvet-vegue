@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>VELVET VOGUE — World</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="extra.css"/>
+</head>
+<body>
+<div class="page-loader" aria-hidden="true"><div class="loader-mark">VELVET <i>VOGUE</i></div><div class="loader-line"><span></span></div></div>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <a href="index.html" class="nav-logo">VELVET<span> VOGUE</span></a>
+  <ul class="nav-links">
+    <li><a href="new-in.html">New In</a></li>
+    <li><a href="index.html">Shop</a></li>
+    <li><a href="lookbook.html">Lookbook</a></li>
+    <li><a href="designers.html">Designers</a></li>
+    <li><a href="world.html" class="active">World</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="nav-btn nav-search-trigger" title="Search" aria-label="Open product search" aria-expanded="false" onclick="openSearch()">&#9906;</button>
+    <button class="nav-btn account-icon-btn" title="Account" aria-label="Open customer account" onclick="window.location.href='account.html'"><svg class="account-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.25"></circle><path d="M5.75 19c.55-3.2 2.7-5 6.25-5s5.7 1.8 6.25 5"></path></svg></button>
+    <button class="nav-btn wishlist-icon-btn" title="Wishlist" aria-label="View wishlist" onclick="window.location.href='wishlist.html'"><svg class="wishlist-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.25 5.85c-1.7-1.72-4.48-1.72-6.18 0L12 7.94 9.93 5.85a4.34 4.34 0 0 0-6.18 0 4.44 4.44 0 0 0 0 6.24L12 20l8.25-7.91a4.44 4.44 0 0 0 0-6.24Z"></path></svg><span class="wish-num" style="display:none">0</span></button>
+    <button class="nav-btn bag-icon-btn" title="Bag" aria-label="View shopping bag" onclick="window.location.href='bag.html'">
+      <svg class="bag-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8.5h13l1 12h-15l1-12Z"></path><path d="M9 9V6.5a3 3 0 0 1 6 0V9"></path></svg>
+      <span class="cart-num" id="cartNum" style="display:none">0</span>
+    </button>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <video class="page-hero-video" autoplay muted loop playsinline preload="metadata" poster="https://images.pexels.com/photos/7081139/pexels-photo-7081139.jpeg">
+    <source src="./video.mp4" type="video/mp4"/>
+  </video>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <p class="page-hero-kicker">Since 2014</p>
+    <h1 class="page-hero-title">Our <em>World</em></h1>
+    <p class="page-hero-desc">A house built on slow fashion, ethical production, and craft carried across Europe — from Florence workshops to Paris boutiques.</p>
+  </div>
+</section>
+
+<div class="world-stats" style="margin-top:56px;">
+  <div class="world-stat"><div class="world-stat-num">2014</div><div class="world-stat-label">Founded</div></div>
+  <div class="world-stat"><div class="world-stat-num">6</div><div class="world-stat-label">Partner Ateliers</div></div>
+  <div class="world-stat"><div class="world-stat-num">12</div><div class="world-stat-label">Boutiques</div></div>
+  <div class="world-stat"><div class="world-stat-num">100%</div><div class="world-stat-label">Carbon-Neutral Shipping</div></div>
+</div>
+
+<div class="section-head">
+  <h2>What We <em style="font-style:italic;color:var(--gold)">Believe</em></h2>
+  <p>The principles behind every collection</p>
+</div>
+
+<div class="world-values">
+  <div class="world-value">
+    <h3>Made Slowly</h3>
+    <p>We release four collections a year, not fifty-two. Every piece is produced in limited runs, made-to-order where possible, to reduce waste and overproduction.</p>
+  </div>
+  <div class="world-value">
+    <h3>Made Traceably</h3>
+    <p>Every garment can be traced back to the atelier and material source that made it. We publish our supplier list and visit every workshop we work with.</p>
+  </div>
+  <div class="world-value">
+    <h3>Made to Last</h3>
+    <p>We favor natural fibers — silk, linen, wool, cashmere — chosen for durability first. Our Care Guide and repair service help pieces outlive trends.</p>
+  </div>
+</div>
+
+<div class="section-head">
+  <h2>Find Us <em style="font-style:italic;color:var(--gold)">In Person</em></h2>
+  <p>Boutiques across Europe</p>
+</div>
+
+<div class="world-store-grid">
+  <div class="world-store-card">
+    <img src="https://images.pexels.com/photos/3735561/pexels-photo-3735561.jpeg" alt="Paris"/>
+    <div class="world-store-overlay">
+      <div class="world-store-city">Paris</div>
+      <div class="world-store-country">France · Flagship</div>
+    </div>
+  </div>
+  <div class="world-store-card">
+    <img src="https://images.pexels.com/photos/38495374/pexels-photo-38495374.jpeg" alt="Florence"/>
+    <div class="world-store-overlay">
+      <div class="world-store-city">Florence</div>
+      <div class="world-store-country">Italy</div>
+    </div>
+  </div>
+  <div class="world-store-card">
+    <img src="https://images.pexels.com/photos/33995836/pexels-photo-33995836.jpeg" alt="Antwerp"/>
+    <div class="world-store-overlay">
+      <div class="world-store-city">Antwerp</div>
+      <div class="world-store-country">Belgium</div>
+    </div>
+  </div>
+</div>
+
+<div class="newsletter">
+  <div class="newsletter-inner">
+    <h2>A letter from the <em>Atelier</em></h2>
+    <p>Join our inner circle for early access to new collections, invitations to private events, and stories from our makers.</p>
+    <div class="nl-form">
+      <input class="nl-input" type="email" placeholder="your@email.com"/>
+      <button class="nl-btn" onclick="showToast('Welcome to the atelier ✦')">Subscribe</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">VELVET <span>VOGUE</span></div>
+      <p class="footer-tagline">Slow fashion, European craft. Made-to-order in our partner ateliers across Italy and France since 2014.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="new-in.html">New Arrivals</a></li>
+        <li><a href="index.html">Dresses</a></li>
+        <li><a href="index.html">Outerwear</a></li>
+        <li><a href="index.html">Accessories</a></li>
+        <li><a href="index.html">Sale</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Service</h4>
+      <ul>
+        <li><a href="#">Size Guide</a></li>
+        <li><a href="#">Shipping</a></li>
+        <li><a href="#">Returns</a></li>
+        <li><a href="#">Care Guide</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>House</h4>
+      <ul>
+        <li><a href="world.html">Our Story</a></li>
+        <li><a href="world.html">Sustainability</a></li>
+        <li><a href="designers.html">Designers</a></li>
+        <li><a href="#">Press</a></li>
+        <li><a href="world.html">Stores</a></li>
+        <li><a href="admin.html">Admin</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 Vèlo Maison. All rights reserved.</span>
+    <div class="footer-socials">
+      <a href="#" class="fsocial">𝕏</a>
+      <a href="#" class="fsocial">in</a>
+      <a href="#" class="fsocial">ig</a>
+      <a href="#" class="fsocial">pt</a>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="products-data.js"></script>
+<script src="script.js"></script>
+<script src="loader.js"></script>
+</body>
+</html>

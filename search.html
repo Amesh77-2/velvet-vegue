@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Search — Velvet Vogue</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="search-page-body">
+  <div class="page-loader" aria-hidden="true"><div class="loader-mark">VELVET <i>VOGUE</i></div><div class="loader-line"><span></span></div></div>
+  <div class="luxury-grain" aria-hidden="true"></div>
+  <div class="cursor" id="cursor"></div><div class="cursor-ring" id="cursorRing"></div>
+
+  <main class="search-page">
+    <video class="search-page-film" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+      <source src="./video.mp4" type="video/mp4"/>
+    </video>
+    <div class="search-page-shade"></div>
+
+    <header class="search-page-nav">
+      <a href="index.html" class="search-page-logo">VELVET <span>VOGUE</span></a>
+      <a href="index.html" class="search-page-back"><span>&larr;</span> Return to boutique</a>
+    </header>
+
+    <section class="search-page-content">
+      <p class="search-page-kicker">Private discovery</p>
+      <h1>Find your <em>signature</em></h1>
+      <div class="search-page-field">
+        <span>&#9906;</span>
+        <input id="productSearch" type="search" placeholder="Search the collection" autocomplete="off" autofocus aria-label="Search the collection"/>
+        <small id="searchCount">Type to discover</small>
+      </div>
+      <div class="search-suggestions search-page-suggestions">
+        <span>Curated searches</span>
+        <button type="button" data-search="Silk">Silk</button>
+        <button type="button" data-search="Dress">Dresses</button>
+        <button type="button" data-search="Linen">Linen</button>
+        <button type="button" data-search="New">New arrivals</button>
+      </div>
+      <div class="search-results search-page-results" id="searchResults"></div>
+    </section>
+
+    <div class="search-page-number" aria-hidden="true">VV <i>/</i> 2026</div>
+  </main>
+
+  <div class="modal-bg" id="modalBg" onclick="closeModal()"></div>
+  <div class="modal" id="modal">
+    <div class="modal-img"><img id="modalImg" src="" alt="Product"/></div>
+    <div class="modal-body">
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+      <p class="modal-kicker" id="modalCat"></p>
+      <h2 class="modal-title" id="modalTitle"></h2>
+      <p class="modal-price" id="modalPrice"></p>
+      <p class="modal-desc">Crafted with the finest materials and finished by hand in our European ateliers.</p>
+      <div class="modal-sizes"><div class="modal-size">XS</div><div class="modal-size">S</div><div class="modal-size sel">M</div><div class="modal-size">L</div></div>
+      <button class="modal-add" onclick="addFromModal()">Add to Bag</button>
+    </div>
+  </div>
+  <div class="toast" id="toast"></div>
+
+  <script src="products-data.js"></script>
+  <script src="script.js"></script>
+  <script src="loader.js"></script>
+</body>
+</html>
